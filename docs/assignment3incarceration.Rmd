@@ -1,35 +1,14 @@
 ---
-title: "assignment3incarceration"
-author: "Mayumi Alino"
-date: "11/13/2020"
+title: "Incarceration"
+author: "Mayumi Sophiya Alino"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library("kableExtra")
-source("assignment3.R")
+incarceration_analysis <- source("assignment3.R")
 ```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 **One of the sharpest manifestations of racism in the United States is its prison system. A complex set of social and political structures, including the over-policing (Links to an external site.) of individuals of color and the war on drugs (Links to an external site.) have led to the disproportionate incarceration of people of color. These issues are very well summarized in the documentary 13th, which you can watch for free (Links to an external site.).**
 
@@ -64,7 +43,9 @@ See below for additional information for each component.
 
 Introduction + Summary Information
 As you introduce your report and the dataset, you should describe the variables that you've chosen to analyze. In doing so, make clear which measure(s) of incarceration you are focusing on. 
-
+```{r echo=FALSE}
+  analysis_data
+```
 **This project is an analysis of fjhgkjfskj**
 
 Then, you will share at least 5 relevant values of interest. These will likely be calculated using your DPLYR skills, answering questions such as: 
@@ -78,7 +59,9 @@ How much has my variable change over the last N years?
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race. 
 
 Trends over time chart
-
+```{r echo=FALSE}
+  incarceration_graph
+```
 The first chart that you'll create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
 Show more than one, but fewer than ~10 lines: your graph should compare the trend of your measure over time. This may mean showing the same measure for different locations, or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
@@ -89,7 +72,9 @@ In your .Rmd file, make sure to describe why you included the chart, and what pa
 When I say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
 
 Variable comparison chart
-
+```{r echo=FALSE}
+  incarceration_chart
+```
 The second chart that you'll create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means, and want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
 You must have clear x and y axis labels,
@@ -107,6 +92,8 @@ Use a minimalist theme for the map (see reading)
 In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 Feel free to get creative
 While the above layout is intended to set guidelines for our expectations, you should not feel restrained by this structure. For example, you can add additional encodings, use interactive charting packages in addition to ggplot2, layout multiple plots next to one another with the patchwork (Links to an external site.) package, and take this in various other directions!
-
+```{r echo=FALSE}
+  incarceration_map
+```
 Submission
 Once you've finished editing your analysis.r and index.Rmd files, you'll need to compile your page to a website. Then, use git to add and commit the changes you've made, and push those changes to your repository on GitHub. Once you change the GitHub Pages permissions to publish your website, you should be able to see it on the web! Please submit the URL of your GitHub Repository as you assignment submission on Canvas.

@@ -9,8 +9,6 @@ library(patchwork)
 library(styler)
 
 incarceration_trends <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv", stringsAsFactors = FALSE)
-incarceration_trends <- incarceration_trends %>% 
-  mutate(year = as.Date(year))
 View(incarceration_trends)
 
 # Cross reference total jail pop. rate
@@ -37,13 +35,8 @@ View(analysis_data)
 
 # Draw a line plot (with line geometry)
 # trend by year
-ggplot(data = analysis_data) +
-  geom_line(mapping = aes(x = year, y = price))
-
-# `smooth` geometry
-ggplot(data = analysis_data) +
-  geom_smooth(mapping = aes(x = year, y = price))
-
+incarceration_graph <- ggplot(data = analysis_data) +
+  geom_line(mapping = aes(x = year, y = value))
 
 # Variable Comparison Chart
 # Thoughtfully creates a chart comparing two variables, describes *why* it was designed that way, and what patterns emerge. Chart meets requirements outlined above.
@@ -53,8 +46,8 @@ ggplot(data = analysis_data) +
 # the x-axis and year to the y-axis. Note that by default, column geometry
 # will us the "sum" of all of the y-values, so that the chart is actually of the
 # TOTAL value of all of the value in the x-axis
-ggplot(data = analysis_data) +
-  geom_col(mapping = aes(x = year, y = price))
+incarceration_chart <- ggplot(data = analysis_data) +
+  geom_col(mapping = aes(x = year, y = value1, value2))
 
 # Map
 # Thoughtfully creates a map of trends across the U.S., describes *why* it was designed that way, and what patterns emerge. Chart meets requirements outlined above.
@@ -79,6 +72,13 @@ ggplot(county_shapes) +
   ) +
   coord_map()
 
-# Report Quality and Completeness
-# The report is successfully compiled into a hosted website. It doesn't include any unnecessary code, and the code (analysis.R) is well written and commented, lacking any linting errors.
-# 20.0 pts
+incarceration_map <- ggplot(analysis_data) +
+  geom_polygon(
+    mapping = aes(x = long, y = lat, group = group, fill = black_white_ratio),
+    color = "#d3d3d3", size = .3
+  ) +
+  scale_fill_continuous(limits = c(0, max(analysis_data$black_jail_pop_rate)), na.value = "white") +
+  blank_theme +
+  ggtitle("Black incarceration rate") +
+  coord_map() +
+  labs(fill = "Black incarceration rate")
