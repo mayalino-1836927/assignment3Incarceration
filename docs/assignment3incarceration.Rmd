@@ -65,11 +65,16 @@ See below for additional information for each component.
 Introduction + Summary Information
 As you introduce your report and the dataset, you should describe the variables that you've chosen to analyze. In doing so, make clear which measure(s) of incarceration you are focusing on. 
 
+**This project is an analysis of fjhgkjfskj**
+
 Then, you will share at least 5 relevant values of interest. These will likely be calculated using your DPLYR skills, answering questions such as: 
 
 What is the average value of my variable across all the counties (in the current year)?
+**The average value**
 Where is my variable the highest / lowest?
+**the variable is highest at djgfkjsgdf and lowest **
 How much has my variable change over the last N years?
+**This value has **
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race. 
 
 Trends over time chart
