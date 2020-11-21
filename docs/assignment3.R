@@ -20,8 +20,10 @@ kingcounty2018 <- incarceration_trends %>%
 
 # Grab a few columns
 analysis_data <- incarceration_trends %>% 
-  select(black_jail_pop_rate, white_jail_pop_rate, white_prison_pop_rate, total_prison_pop_rate, total_jail_pop_rate, year, fips, state, county_name) %>%
-  mutate(black_white_ratio = black_jail_pop_rate/white_jail_pop_rate) %>% 
+  select(aapi_jail_pop_rate, aapi_prison_pop_rate, latinx_jail_pop_rate, latinx_prison_pop_rate, black_jail_pop_rate, black_prison_pop_rate,
+         white_jail_pop_rate, white_prison_pop_rate, native_jail_pop_rate, native_prison_pop_rate, total_prison_pop_rate, total_jail_pop_rate,
+         year, fips, state, county_name) %>%
+  mutate(black_jail_ratio = black_jail_pop_rate/total_jail_pop_rate) %>% 
   mutate(newvaluehere = computehere) %>%
   mutate() %>%
   mutate() %>%
