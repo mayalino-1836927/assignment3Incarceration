@@ -104,11 +104,11 @@ black_jail_prison_chart <- ggplot(data = analysis_data) +
 county_shapes <- map_data("county") %>%
   unite(polyname, region, subregion, sep = ",") %>%
   left_join(county.fips, by = "polyname")
-View(county_shapes)
+#View(county_shapes)
 
 map_data <- county_shapes %>%
   left_join(analysis_data, by="fips")
-View(map_data)
+#View(map_data)
 
 blank_theme <- theme_bw() +
   theme(
